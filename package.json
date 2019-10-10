@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "./generate-data.js && vue-cli-service serve",
+    "build": "./generate-data.js && vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -21,9 +21,11 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "glob": "^7.1.4",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "write": "^2.0.0"
   },
   "eslintConfig": {
     "root": true,
