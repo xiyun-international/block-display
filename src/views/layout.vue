@@ -12,7 +12,7 @@
         <a-menu
           theme="dark"
           mode="horizontal"
-          :defaultSelectedKeys="['1']"
+          :defaultSelectedKeys="menuDefaultSelectedKeys"
           :style="{ lineHeight: '64px' }"
         >
           <a-menu-item 
@@ -30,7 +30,7 @@
     </a-layout-content>
 
     <a-layout-footer style="text-align: center">
-      Xy 业务组件
+      Xy 物料平台
     </a-layout-footer>
   </a-layout>
 </template>
@@ -43,6 +43,15 @@ export default {
     return {
       childrenRoutes,
     }
+  },
+
+  computed: {
+    menuDefaultSelectedKeys() {
+      const routeIndex = childrenRoutes.findIndex((childrenRoute) => {
+        return childrenRoute.name === this.$route.name
+      })
+      return [routeIndex]
+    },
   },
 
   methods: {
