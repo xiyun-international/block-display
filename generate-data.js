@@ -17,7 +17,7 @@ glob('./blocks/packages/*/package.json', {}, (err, files) => {
         repository: pkgJson.repository.url,
       })
     })
-    write.sync('./src/blocks-data/data.json', JSON.stringify(result), {
+    write.sync('./public/blocks-data.json', JSON.stringify(result), {
       overwrite: true,
     })
   }
